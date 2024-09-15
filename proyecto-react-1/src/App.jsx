@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
 import './App.css'
+import Navbar from './components/navbar/navbar';
+import Footer from './components/Footer/Footer';
+import Catalog from './components/Catalog/Catalog';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <div className="App">
+        <Navbar />
+      
+      <header className='header'>
+        <h1>Bienvenido a ALfresco</h1>
+        <p>Descubre el maravillo mundo de los útiles</p>
+      </header>
+      
+      <Routes>
+          <Route path="/" element={<Home />} /> {/* Ruta para la página de inicio */}
+          <Route path="/catalog" element={<Catalog />} /> {/* Ruta para el catálogo */}
+          {/* Puedes añadir más rutas aquí */}
+      </Routes>
 
-export default App
+      <Footer />
+      </div>
+    </Router>
+  );
+}
+const Home = () => (
+  <section className="featured-movies">
+    <h2>Catálogo de Productos</h2> {/* Subtítulo de la sección */}
+    <div className="movie-grid">
+      {/* Aquí se pueden agregar tarjetas de películas */}
+    </div>
+  </section>
+);
+export default App;
