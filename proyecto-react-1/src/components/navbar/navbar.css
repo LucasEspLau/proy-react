@@ -1,77 +1,81 @@
 .navbar {
-    display: flex; /* Utiliza el modelo de caja flexible para el layout */
-    justify-content: space-between; /* Distribuye el espacio entre los elementos de manera equitativa */
-    align-items: center; /* Alinea los elementos verticalmente al centro */
-    background-color: #333; /* Color de fondo de la barra de navegación */
-    padding: 10px 20px; /* Espaciado interno de la barra de navegación */
-    color: white; /* Color del texto en la barra de navegación */
-    position: fixed; /* Fija la barra en la parte superior de la ventana */
-    top: 0; /* Alinea la barra al borde superior */
-    left: 0; /* Alinea la barra al borde izquierdo */
-    width: 100%; /* Establece el ancho de la barra al 100% del viewport */
-    z-index: 1000; /* Asegura que la barra de navegación esté encima de otros elementos */
-  }
-  
-.navbar-logo a {
-  color: white; /* Color del texto del enlace del logo */
-  font-size: 24px; /* Tamaño de fuente del enlace del logo */
-  text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
-  font-weight: bold; /* Hace que el texto del enlace del logo sea negrita */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffcb05; /* Color amarillo Pokémon */
+  padding: 10px 20px;
 }
 
-.navbar-links {
-  display: flex; /* Utiliza el modelo de caja flexible para el layout */
-  list-style:none; /* Elimina los puntos de lista predeterminados */
-  padding: 0; /* Elimina el relleno predeterminado */
-  margin: 0; /* Elimina el margen predeterminado */
+.navbar-logo {
+  display: flex;
+  align-items: center;
 }
 
-.navbar-links li {
-  margin: 0px 25px; /* Margen a los lados de cada elemento de la lista */
+.navbar-logo-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
-.navbar-links a {
-  color: white; /* Color del texto de los enlaces de navegación */
-  text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
-  font-size: 16px; /* Tamaño de fuente de los enlaces de navegación */
-  transition: color 0.3s; /* Transición suave para el cambio de color */
-}
-
-.navbar-links a:hover {
-  color: #f0a500; /* Color del texto al pasar el cursor sobre el enlace */
+.navbar-logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3d7dca; /* Color azul de Pokémon */
+  text-transform: uppercase;
 }
 
 .navbar-toggle {
-  display: none; /* Oculta el botón de menú en pantallas grandes */
-  flex-direction: column; /* Organiza las barras del botón en una columna */
-  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .navbar-toggle-bar {
-  width: 25px; /* Ancho de las barras del botón de menú */
-  height: 2px; /* Altura de las barras del botón de menú */
-  background-color: white; /* Color de las barras del botón de menú */
-  margin: 3px 0; /* Margen entre las barras del botón de menú */
+  width: 25px;
+  height: 3px;
+  background-color: #3d7dca;
+  margin: 5px 0;
 }
 
-/* Estilos para pantallas de 768px o menos (dispositivos móviles) */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.navbar-links a {
+  color: #3d7dca;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.navbar-links a:hover {
+  color: #f58220; /* Color de hover en naranja */
+}
+
+/* Media Query para hacer el navbar responsive */
 @media (max-width: 768px) {
   .navbar-links {
-    display: none; /* Oculta los enlaces de navegación en pantallas pequeñas por defecto */
-    flex-direction: column; /* Organiza los enlaces en una columna */
-    position: absolute; /* Posiciona los enlaces de navegación de forma absoluta */
-    top: 60px; /* Posiciona los enlaces justo debajo de la barra de navegación */
-    right: 20px; /* Alinea los enlaces al borde derecho */
-    background-color: #333; /* Color de fondo de los enlaces de navegación en pantallas pequeñas */
-    width: 200px; /* Ancho de la caja de enlaces de navegación */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para los enlaces de navegación */
+    display: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
   }
 
-  .navbar-links.active {
-    display: flex; /* Muestra los enlaces de navegación cuando el menú está activo */
+  .navbar-links li {
+    margin: 10px 0;
   }
 
   .navbar-toggle {
-    display: flex; /* Muestra el botón de menú en pantallas pequeñas */
+    display: flex;
+  }
+
+  .navbar-links.show {
+    display: flex;
   }
 }
